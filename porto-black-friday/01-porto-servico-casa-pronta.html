@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Porto Serviço — Casa pronta</title>
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body style="margin:0;background:#111;min-height:100vh;display:flex;justify-content:center;align-items:flex-start;padding:12px;">
+<div id="porto-home-v2" class="w-full flex justify-center">
+  <style>
+    #porto-home-v2 .phone{width:min(100%,390px);border-radius:28px;overflow:hidden;background:linear-gradient(160deg,#082448,#063567 55%,#04172d);color:white;font-family:Arial,sans-serif;padding:24px;position:relative}
+    #porto-home-v2 .logo{font-size:30px;font-weight:900;letter-spacing:-2px;color:#fff}
+    #porto-home-v2 .bf{font-size:11px;font-weight:900;letter-spacing:1.4px;color:#52d7ff}
+    #porto-home-v2 h2{font-size:30px;line-height:1;margin:18px 0 7px;font-weight:900;color:#fff}
+    #porto-home-v2 p,#porto-home-v2 .status{font-size:13px;color:#fff;margin:0}
+    #porto-home-v2 .room{margin:22px 0 15px;background:#eef6fa;border-radius:24px;padding:13px;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    #porto-home-v2 .scene{position:relative;min-height:128px;border:0;border-radius:18px;background:#fff;color:#12385e;padding:8px;overflow:hidden;cursor:pointer;text-align:center;font-weight:900}
+    #porto-home-v2 .visual{height:86px;position:relative;display:grid;place-items:center;font-size:48px}
+    #porto-home-v2 .label{font-size:12px;color:#12385e;position:relative;z-index:3}
+    #porto-home-v2 .hint{font-size:9px;color:#607c94;display:block;margin-top:2px}
+    #porto-home-v2 .dirt{position:absolute;inset:18px 18px 14px;border-radius:14px;background:radial-gradient(circle at 25% 35%,#806d51 0 5px,transparent 6px),radial-gradient(circle at 70% 60%,#6a573d 0 7px,transparent 8px),radial-gradient(circle at 48% 75%,#9a8360 0 5px,transparent 6px);opacity:.8;transition:.55s ease}
+    #porto-home-v2 .air-bad{position:absolute;right:16px;top:20px;font-size:22px;transition:.45s}.air-good{position:absolute;right:16px;top:20px;font-size:22px;opacity:0;transition:.45s}
+    #porto-home-v2 .spark{position:absolute;right:25px;top:25px;font-size:25px;transition:.4s}.plug-ok{position:absolute;right:25px;top:25px;font-size:23px;opacity:0;transition:.4s}
+    #porto-home-v2 .broken-lock{position:absolute;right:20px;top:22px;font-size:28px;transform:rotate(18deg);transition:.45s}.fixed-lock{position:absolute;right:20px;top:22px;font-size:28px;opacity:0;transition:.45s}
+    #porto-home-v2 .scene.preview .dirt,#porto-home-v2 .scene.done .dirt{opacity:0}
+    #porto-home-v2 .scene.preview .air-bad,#porto-home-v2 .scene.done .air-bad,#porto-home-v2 .scene.preview .spark,#porto-home-v2 .scene.done .spark,#porto-home-v2 .scene.preview .broken-lock,#porto-home-v2 .scene.done .broken-lock{opacity:0}
+    #porto-home-v2 .scene.preview .air-good,#porto-home-v2 .scene.done .air-good,#porto-home-v2 .scene.preview .plug-ok,#porto-home-v2 .scene.done .plug-ok,#porto-home-v2 .scene.preview .fixed-lock,#porto-home-v2 .scene.done .fixed-lock{opacity:1}
+    #porto-home-v2 .scene.done{background:#daf7ef;color:#08745c}
+    #porto-home-v2 .progress{height:7px;background:#ffffff2e;border-radius:99px;overflow:hidden}
+    #porto-home-v2 .bar{height:100%;background:#47d6ff;width:0;transition:.25s}
+    #porto-home-v2 .reward{display:none;background:#fff;color:#082448;border-radius:20px;padding:18px;margin-top:15px;text-align:center;animation:pop .35s ease}
+    #porto-home-v2 .reward.show{display:block}
+    #porto-home-v2 .reward b{font-size:21px;display:block;color:#082448}
+    #porto-home-v2 .reward span{font-size:13px;color:#37556e}
+    #porto-home-v2 .cta{margin-top:12px;width:100%;border:0;border-radius:14px;background:#081421;color:#fff;padding:14px;font-weight:900;cursor:pointer}
+    @keyframes pop{from{transform:scale(.9);opacity:0}to{transform:scale(1);opacity:1}}
+  </style>
+  <div class="phone">
+    <div class="logo">porto</div><div class="bf">BLACK FRIDAY • PORTO SERVIÇO</div>
+    <h2>Deixe sua casa pronta.</h2><p>Passe o mouse ou toque para resolver cada problema.</p>
+    <div class="room">
+      <button class="scene" data-id="0" type="button"><div class="visual">🛋️<div class="dirt"></div></div><div class="label">Sofá sujo<span class="hint">Passe o mouse / toque</span></div></button>
+      <button class="scene" data-id="1" type="button"><div class="visual">❄️<span class="air-bad">🥵</span><span class="air-good">💨</span></div><div class="label">Ar-condicionado<span class="hint">Fazer manutenção</span></div></button>
+      <button class="scene" data-id="2" type="button"><div class="visual">📺<span class="spark">⚡</span><span class="plug-ok">✅</span></div><div class="label">Eletrônico<span class="hint">Consertar</span></div></button>
+      <button class="scene" data-id="3" type="button"><div class="visual">🚪<span class="broken-lock">🔓</span><span class="fixed-lock">🔒</span></div><div class="label">Fechadura<span class="hint">Arrumar</span></div></button>
+    </div>
+    <div class="progress"><div class="bar"></div></div><div class="status" style="margin-top:7px">0 de 4 serviços resolvidos</div>
+    <div class="reward" aria-live="polite"><b>🏠 CASA PRONTA!</b><span>Oferta Black Friday Porto Serviço desbloqueada.</span><button class="cta" type="button">VER OFERTA DESBLOQUEADA</button></div>
+  </div>
+  <script>
+  (()=>{const r=document.querySelector('#porto-home-v2');if(r.dataset.init)return;r.dataset.init='1';const cards=[...r.querySelectorAll('.scene')],bar=r.querySelector('.bar'),status=r.querySelector('.status'),reward=r.querySelector('.reward');let count=0;cards.forEach(c=>{c.addEventListener('mouseenter',()=>{if(!c.classList.contains('done'))c.classList.add('preview')});c.addEventListener('mouseleave',()=>c.classList.remove('preview'));c.addEventListener('click',()=>{if(c.classList.contains('done'))return;c.classList.remove('preview');c.classList.add('done');c.querySelector('.hint').textContent='Resolvido pela Porto ✓';count++;bar.style.width=(count/4*100)+'%';status.textContent=count+' de 4 serviços resolvidos';if(count===4)reward.classList.add('show')})});r.querySelector('.cta').addEventListener('click',e=>e.currentTarget.textContent='OFERTA SELECIONADA ✓')})();
+  </script>
+</div>
+</body>
+</html>
